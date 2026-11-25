@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BAC la Geografie — Teste PDF cu Bareme (2022–2026) & Teste Digitale Interactive (2026)</title>
+<style>
+  :root {
+    --primary: #0f4c5c;
+    --primary-mid: #0f766e;
+    --primary-light: #f0fdfa;
+    --blue: #1e3a8a;
+    --blue-mid: #2563eb;
+    --blue-light: #eff6ff;
+    --amber: #b45309;
+    --amber-light: #fef3c7;
+    --rose: #9d174d;
+    --rose-light: #fce7f3;
+    --ok: #16a34a;
+    --ok-light: #dcfce7;
+    --bg: #f1f5f9;
+    --card: #ffffff;
+    --border: #cbd5e1;
+    --border-soft: #e2e8f0;
+    --text: #0f172a;
+    --muted: #475569;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  /* Sticky Topbar */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #0f172a;
+    color: #fff;
+    padding: 11px 20px;
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.25);
+  }
+  .topbar-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 15.5px;
+    flex-wrap: wrap;
+  }
+  .badge-top {
+    background: #0d9488;
+    color: #fff;
+    padding: 3px 9px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #cbd5e1;
+  }
+  .progress-track {
+    width: 135px;
+    height: 8px;
+    background: #334155;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #22c55e;
+    border-radius: 999px;
+    transition: width 0.25s ease;
+  }
+
+  /* Main Container */
+  .container {
+    max-width: 1320px;
+    margin: 20px auto 52px;
+    padding: 0 18px;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #0f4c5c 0%, #0f766e 52%, #1d4ed8 100%);
+    color: #fff;
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-bottom: 18px;
+    box-shadow: 0 8px 24px rgba(15, 76, 92, 0.18);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .hero-main { max-width: 780px; }
+  .hero-kicker {
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    opacity: 0.88;
+    font-weight: 700;
+  }
+  .hero h1 {
+    margin: 5px 0 8px;
+    font-size: 25px;
+    line-height: 1.22;
+    font-weight: 800;
+  }
+  .hero p {
+    margin: 0;
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.93);
+  }
+  .hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .hero-chip {
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  /* Resource Strip */
+  .resources-bar {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  }
+  .resources-label {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .resources-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .btn-res {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.6px;
+    font-weight: 700;
+    color: var(--primary);
+    background: var(--primary-light);
+    border: 1px solid #99f6e4;
+    padding: 6px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+  }
+  .btn-res:hover {
+    background: var(--primary-mid);
+    border-color: var(--primary-mid);
+    color: #fff;
+  }
+  .btn-res.alt {
+    color: var(--blue);
+    background: var(--blue-light);
+    border-color: #bfdbfe;
+  }
+  .btn-res.alt:hover {
+    background: var(--blue-mid);
+    border-color: var(--blue-mid);
+    color: #fff;
+  }
+
+  /* Filter & Search Bar */
+  .nav-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 13px 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .year-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    flex: 1;
+  }
+  .year-tab {
+    border: 1.5px solid var(--border);
+    background: #f8fafc;
+    color: var(--text);
+    padding: 7px 14px;
+    border-radius: 9px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.16s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 102px;
+  }
+  .year-tab:hover {
+    border-color: #2dd4bf;
+    background: var(--primary-light);
+  }
+  .year-tab.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(15, 76, 92, 0.22);
+  }
+  .tab-label {
+    font-size: 14px;
+    font-weight: 800;
+  }
+  .tab-sub {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .year-tab.active .tab-sub {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .search-box {
+    position: relative;
+    min-width: 220px;
+    width: 280px;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 9px 12px 9px 34px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    font-size: 13.5px;
+    background: #f8fafc;
+    color: var(--text);
+  }
+  .search-box input:focus {
+    outline: 2px solid #0d9488;
+    background: #fff;
+    border-color: #0d9488;
+  }
+  .search-icon {
+    position: absolute;
+    left: 11px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  /* Asymmetric 2-Column Workspace: Left = PDFs+Barems (~39%), Right = Larger Digital Interactive Tests (~61%) */
+  .workspace-grid {
+    display: grid;
+    grid-template-columns: minmax(340px, 0.95fr) minmax(450px, 1.45fr);
+    gap: 20px;
+    align-items: start;
+  }
+
+  /* Left Column: Physical Format (PDF + Barems) */
+  .panel-pdf {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: 4px solid #475569;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+  }
+  .panel-head {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-soft);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: #f8fafc;
+    flex-wrap: wrap;
+  }
+  .panel-head h3 {
+    margin: 0;
+    font-size: 15.5px;
+    font-weight: 800;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .panel-count {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    background: #e2e8f0;
+    padding: 2px 9px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .year-divider {
+    padding: 7px 16px;
+    background: #f1f5f9;
+    font-size: 12px;
+    font-weight: 800;
+    color: #334155;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .year-divider a {
+    color: var(--primary-mid);
+    text-decoration: none;
+    font-size: 11.5px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .year-divider a:hover { text-decoration: underline; }
+
+  .pdf-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .pdf-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 9px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    transition: background 0.14s ease;
+  }
+  .pdf-row:last-child { border-bottom: none; }
+  .pdf-row:hover { background: #f8fafc; }
+
+  .pdf-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .pdf-line1 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .pdf-year {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--primary);
+    background: var(--primary-light);
+    padding: 1px 7px;
+    border-radius: 5px;
+  }
+  .pdf-stage {
+    font-size: 13.3px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .pdf-date {
+    font-size: 11.8px;
+    color: var(--muted);
+  }
+  .mini-game-dot {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--blue);
+    background: var(--blue-light);
+    border: 1px solid #bfdbfe;
+    padding: 0 6px;
+    border-radius: 999px;
+  }
+
+  .pdf-btns {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .btn-pdf, .btn-barem {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12.2px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.14s ease;
+  }
+  .btn-pdf {
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+  }
+  .btn-pdf:hover {
+    background: #1d4ed8;
+    color: #fff;
+    border-color: #1d4ed8;
+  }
+  .btn-barem {
+    background: #f0fdfa;
+    color: #0f766e;
+    border: 1px solid #99f6e4;
+  }
+  .btn-barem:hover {
+    background: #0f766e;
+    color: #fff;
+    border-color: #0f766e;
+  }
+
+  /* Right Column: Larger Digital Interactive Tests */
+  .panel-digital {
+    background: var(--card);
+    border: 1.5px solid #5eead4;
+    border-top: 5px solid var(--primary-mid);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(15, 118, 110, 0.10);
+  }
+  .panel-digital .panel-head {
+    background: linear-gradient(90deg, #f0fdfa 0%, #eff6ff 100%);
+    padding: 16px 20px;
+    border-bottom: 1px solid #ccfbf1;
+  }
+  .panel-digital .panel-head h3 {
+    font-size: 17.5px;
+    color: var(--primary);
+  }
+  .panel-digital .panel-count {
+    background: var(--primary);
+    color: #fff;
+    font-size: 12.5px;
+    padding: 3px 11px;
+  }
+
+  .digital-intro {
+    padding: 10px 20px;
+    background: #f8fafc;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+  }
+  .digital-intro span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+  }
+
+  .digital-grid {
+    padding: 18px 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .game-card {
+    background: #ffffff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 12px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 14px;
+    transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+    min-height: 230px;
+  }
+  .game-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary-mid);
+    box-shadow: 0 10px 24px rgba(15, 118, 110, 0.14);
+  }
+  .game-card.done {
+    border-color: var(--ok);
+    background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
+  }
+
+  .game-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .tag-examen {
+    background: var(--amber-light);
+    color: var(--amber);
+    border: 1px solid #fcd34d;
+  }
+  .tag-suplimentara {
+    background: var(--rose-light);
+    color: var(--rose);
+    border: 1px solid #f9a8d4;
+  }
+  .tag-pretestare {
+    background: var(--primary-light);
+    color: var(--primary-mid);
+    border: 1px solid #99f6e4;
+  }
+  .tag-exersare {
+    background: var(--blue-light);
+    color: var(--blue);
+    border: 1px solid #bfdbfe;
+  }
+  .year-chip {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--primary);
+    background: var(--primary-light);
+    padding: 2px 9px;
+    border-radius: 6px;
+  }
+
+  .game-title {
+    margin: 10px 0 6px;
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .game-desc {
+    margin: 0;
+    font-size: 13.4px;
+    color: var(--muted);
+  }
+
+  .game-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .feat-chip {
+    font-size: 11.8px;
+    font-weight: 600;
+    color: #334155;
+    background: #f1f5f9;
+    padding: 3px 8px;
+    border-radius: 5px;
+  }
+
+  .game-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border-soft);
+  }
+  .btn-play {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background: linear-gradient(90deg, #0f4c5c, #0f766e);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 3px 10px rgba(15, 118, 110, 0.24);
+    transition: filter 0.15s ease, transform 0.15s ease;
+  }
+  .btn-play:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+  }
+  .btn-done {
+    border: 1.5px solid var(--border);
+    background: #f8fafc;
+    color: var(--muted);
+    padding: 9px 12px;
+    border-radius: 9px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+  }
+  .btn-done:hover {
+    border-color: var(--ok);
+    color: var(--ok);
+  }
+  .game-card.done .btn-done {
+    background: var(--ok-light);
+    border-color: var(--ok);
+    color: #14532d;
+  }
+
+  /* Tips & Footer */
+  .tips-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary-mid);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-top: 22px;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+  .tips-box strong { color: var(--text); }
+
+  .footer-note {
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .link-reset {
+    background: none;
+    border: none;
+    color: #dc2626;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+  }
+
+  @media (max-width: 1060px) {
+    .workspace-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 680px) {
+    .hero { padding: 18px; }
+    .hero h1 { font-size: 21px; }
+    .digital-grid { grid-template-columns: 1fr; padding: 14px; }
+    .search-box { width: 100%; }
+    .year-tab { flex: 1 1 95px; }
+    .pdf-row { flex-direction: column; align-items: flex-start; }
+    .pdf-btns { width: 100%; }
+    .btn-pdf, .btn-barem { flex: 1; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="badge-top">BAC GEOGRAFIE</span>
+      <span>Portal de pregătire — Teste PDF cu Bareme & Teste Digitale Interactive</span>
+    </div>
+    <div class="progress-wrap" title="Progresul testelor digitale salvat local în browser">
+      <span>Teste digitale rezolvate: <strong id="doneCount" style="color:#fff;">0 / 5</strong></span>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <div class="hero-main">
+      <div class="hero-kicker">Ministerul Educației și Cercetării • Examenul Național de Bacalaureat • Ciclul liceal</div>
+      <h1>Pregătire pentru Bacalaureat la Geografie (2022–2026)</h1>
+      <p>
+        În stânga găsești <strong>arhiva oficială completă de teste în format PDF cu bareme (2022–2026)</strong>,
+        iar în dreapta poți rezolva <strong>testele digitale interactive din sesiunea 2026</strong> cu verificare automată, cronometru de 180 de minute și raport descărcabil.
+      </p>
+    </div>
+    <div class="hero-stats">
+      <span class="hero-chip">📄 25 teste PDF + 25 bareme</span>
+      <span class="hero-chip">🎮 5 teste digitale interactive</span>
+      <span class="hero-chip">🎯 100 p. / 180 min</span>
+    </div>
+  </section>
+
+  <!-- Useful BAC Geography Resources -->
+  <section class="resources-bar" aria-label="Resurse oficiale și materiale de pregătire">
+    <span class="resources-label">🧭 Resurse esențiale pentru BAC la Geografie:</span>
+    <div class="resources-links">
+      <a class="btn-res" href="https://drive.google.com/file/d/1Gl19g0btDRskvMwbplZozeIVwxM9gxQa/view" target="_blank" rel="noopener">📘 Programa de BAC (PDF) ↗</a>
+      <a class="btn-res" href="https://docs.google.com/document/d/1mYihOAQNTRzUBxwwdoF3DyBADbEQc70TCjvMZYDiCmk/edit" target="_blank" rel="noopener">📋 Materiale necesare pentru BAC ↗</a>
+      <a class="btn-res alt" href="https://drive.google.com/drive/folders/1JCVsgBj8Qgqd_hXq1IEuCuhZM7gmupVW" target="_blank" rel="noopener">🗺️ Lucru cu harta ↗</a>
+      <a class="btn-res alt" href="https://drive.google.com/drive/folders/19Z06UBY5l8VK1Com1SmBYA9VqqO9LJoZ" target="_blank" rel="noopener">📁 Mapa „Teste pentru exersare” ↗</a>
+    </div>
+  </section>
+
+  <!-- Year Tabs & Search -->
+  <section class="nav-card" aria-label="Filtrare după an și căutare">
+    <div class="year-tabs" id="yearTabs"></div>
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="Caută an, sesiune, climogramă, țară..." autocomplete="off">
+    </div>
+  </section>
+
+  <div class="workspace-grid">
+    <!-- STÂNGA: Arhiva PDF + Bareme (2022–2026) -->
+    <section class="panel-pdf" aria-label="Teste format fizic PDF și bareme">
+      <div class="panel-head">
+        <h3>📄 Teste format fizic (PDF) & Bareme</h3>
+        <span class="panel-count" id="pdfCount">25 teste</span>
+      </div>
+      <div class="pdf-list" id="pdfList"></div>
+    </section>
+
+    <!-- DREAPTA (dimensiune mai mare): Teste digitale interactive 2026 -->
+    <section class="panel-digital" aria-label="Teste digitale interactive BAC Geografie 2026">
+      <div class="panel-head">
+        <h3>🎮 Teste digitale interactive (Sesiunea 2026)</h3>
+        <span class="panel-count" id="gameCount">5 teste interactive</span>
+      </div>
+      <div class="digital-intro">
+        <span>✅ Verificare automată</span>
+        <span>🗺️ Atlase școlare permise</span>
+        <span>🔀 Variante amestecate</span>
+        <span>⏱ 180 min • 100 p.</span>
+      </div>
+      <div class="digital-grid" id="digitalGrid"></div>
+    </section>
+  </div>
+
+  <section class="tips-box">
+    <strong>Recomandare de lucru:</strong>
+    Pregătește lângă tine cele trei atlase geografice școlare permise la examen (<em>Geografia fizică generală</em>, <em>Geografia umană a lumii</em> și <em>Geografie: Republica Moldova și lumea contemporană</em>). Rezolvă testele digitale pentru verificare rapidă și folosește arhiva PDF din stânga pentru antrenament suplimentar pe subiectele din anii 2022–2025.
+  </section>
+
+  <footer class="footer-note">
+    <span>Portal BAC Geografie • Arhivă PDF (2022–2026) + Teste Digitale Interactive (2026)</span>
+    <span>•</span>
+    <a href="https://drive.google.com/drive/folders/1OTvjmsjh3AEO83Ko9OdVVG3yM7b3mGzQ" target="_blank" rel="noopener" style="color:#0f766e;font-weight:700;text-decoration:none;">📁 Mapa „1. Antrenament pentru Bac” ↗</a>
+    <span>•</span>
+    <button type="button" class="link-reset" onclick="resetProgress()">Resetează progresul bifat</button>
+  </footer>
+</main>
+
+<script>
+const GITHUB_BASE = 'https://frostbyte-md.github.io/Teste-de-BAC-la-geografie/';
+const driveFileUrl = id => `https://drive.google.com/file/d/${id}/view`;
+const driveFolderUrl = id => `https://drive.google.com/drive/folders/${id}`;
+
+const YEAR_FOLDERS = {
+  2026: '1UcJv8yri9mtF2ZBqKqfOjEYawTP2LpdP',
+  2025: '1mh4SGPXEnyq94ga37l9bXiRLGqq5bVnR',
+  2024: '1KYWSgtxoGa9286E0VATf3u1iIbMsDpzd',
+  2023: '1y0EunGGudA4UV1nik-yZBPto1ibnrWjZ',
+  2022: '15mFHu99Tj5Q46hE7b09aIwFg5n5HCAPD'
+};
+
+const PDFS = [
+  // 2026
+  { year: 2026, num: 4, stage: 'Test 4 — Sesiunea de bază',              date: 'sesiunea iunie 2026', testId: '1B1fwPDxmjveHBPOdwc0ARJXuVAX7UKcy', baremId: '1_K_9vBynu9WacU4YCaoF5YeQ3wKy69Ee', hasGame: true },
+  { year: 2026, num: 5, stage: 'Test 5 — Sesiunea suplimentară',         date: 'sesiunea iulie 2026', testId: '1JEMsHhdtxXV3VE7BXdEBp3ZYHZQxrtwL', baremId: '10n_gN1gaCvxzGyusQ45Rt5JeTljSO46X', hasGame: true },
+  { year: 2026, num: 3, stage: 'Test 3 — Pretestare',                    date: '01 aprilie 2026',     testId: '1z2xe00jp9Y22wjnk6wAm-Q5gA1JtROuB', baremId: '1rViCfhi-mvJPfxgR784I9MC038cM72Y6', hasGame: true },
+  { year: 2026, num: 1, stage: 'Test 1 — Testare pe eșantion Nr. 1',     date: '19 februarie 2026',   testId: '1bkA90W2bIajAVsRAXqPhklUXU7U2O0fa', baremId: '1MENuSCUXjSpMvE7zLk9BuFW_wPSgJ6kw', hasGame: true },
+  { year: 2026, num: 2, stage: 'Test 2 — Testare pe eșantion Nr. 2',     date: '19 februarie 2026',   testId: '1nQcQtYYtPCQLktoh5ZXkJiwxA0no0RxO', baremId: '1xvBqVphFmU6OePC3WZzom5ErpE_8A_rN', hasGame: true },
+
+  // 2025
+  { year: 2025, num: 4, stage: 'Test 4 — Sesiunea de bază',              date: 'sesiunea 2025',       testId: '1jq8Kr8hnysqrFZEgUUXRYRAnNOiQYZr0', baremId: '10a87M_rzgmnpqDAFoOCimnkaoPs_cCuE' },
+  { year: 2025, num: 5, stage: 'Test 5 — Sesiunea suplimentară',         date: 'sesiunea 2025',       testId: '1KR4NYInHMMLJj1JH7URu_gumGyjDziSm', baremId: '1HGra43RQlfa9ki8XNCFigqIK8i7Grxev' },
+  { year: 2025, num: 3, stage: 'Test 3 — Pretestare',                    date: 'primăvara 2025',      testId: '16pyEcecJWDNNA-so13kkMToilFYlme0O', baremId: '1TzK5K515bLn27wJR7k9pOrgRrbOEqvR5' },
+  { year: 2025, num: 1, stage: 'Test 1 — Test de exersare Nr. 1',        date: 'exersare 2025',       testId: '1mu8TognmwmK9ANkMuIbho5-_0gVAKQVk', baremId: '17YxTZdBytRSi5Z5vWQ-M2LiEK7OzfzSk' },
+  { year: 2025, num: 2, stage: 'Test 2 — Test de exersare Nr. 2',        date: 'exersare 2025',       testId: '1VmgdY2yITqevN-lT0AViiTnnv-kgZbqi', baremId: '1he_Q8CWpvRiAFI8odQPNSiBq11zAmt_j' },
+
+  // 2024
+  { year: 2024, num: 4, stage: 'Test 4 — Sesiunea de bază',              date: 'sesiunea 2024',       testId: '1nm_ecLnJWHx5Q7gKk_fUfvVUDmQolwM5', baremId: '1aEVk9IC0neWoripL3FZX_KZ9SK3cP89l' },
+  { year: 2024, num: 5, stage: 'Test 5 — Sesiunea suplimentară',         date: 'sesiunea 2024',       testId: '1OMAFmCSAhXXkV7epC3ViflE5K9GYJJjl', baremId: '1FgbrI-xF-UId5YIlts7dLF87xRAeGf12' },
+  { year: 2024, num: 3, stage: 'Test 3 — Pretestare',                    date: 'primăvara 2024',      testId: '1z9-7idAPPDffXyqRuub_yNXgQ8SBVQVe', baremId: '1pVUj0tHVKyDrLucAxMMLHoYEB6SYVrQo' },
+  { year: 2024, num: 1, stage: 'Test 1 — Test de exersare Nr. 1',        date: 'exersare 2024',       testId: '1EPQ3fQye3CB0hfLc3V6JsrvpNH6_osWB', baremId: '1FIBvKC6xyVnXFFUOjWVk62LlSU-BVAqJ' },
+  { year: 2024, num: 2, stage: 'Test 2 — Test de exersare Nr. 2',        date: 'exersare 2024',       testId: '1kIfF9vh9GmI9dDrBV1KffrmHH7GWkqxH', baremId: '1ZzgpSjLhBO3yMkOHIszwzOzhyO7C3n8U' },
+
+  // 2023
+  { year: 2023, num: 4, stage: 'Test 4 — Sesiunea de bază',              date: 'sesiunea 2023',       testId: '1djOsxkXj9G93WVEL5vi2jCRo0_0uI7S0', baremId: '1ArcqaOYRpXJEN2sCO-_fFzev-mFBBBKX' },
+  { year: 2023, num: 5, stage: 'Test 5 — Sesiunea suplimentară',         date: 'sesiunea 2023',       testId: '1dizEpCCsEl_TxU5VNzBl1DV1L3RpWBbp', baremId: '1bRRyKPgd8-bJpidUnhcbEAVNO5hywMoV' },
+  { year: 2023, num: 3, stage: 'Test 3 — Pretestare',                    date: 'primăvara 2023',      testId: '1ndx3T_guaBE8SqmLyF3FE0IQjpw6i9x2', baremId: '1Dl-TWUp2HCpPCOyMuqegg6H78XmeNoMS' },
+  { year: 2023, num: 1, stage: 'Test 1 — Test de exersare Nr. 1',        date: 'exersare 2023',       testId: '1CGvdp5nTDXRUAVCM0_oJBNAkGiNvYShG', baremId: '1y3TvLBcmmuhX3U3VPQCuy4QbtcSwKTA1' },
+  { year: 2023, num: 2, stage: 'Test 2 — Test de exersare Nr. 2',        date: 'exersare 2023',       testId: '1Z-rcxsDhO0_f4WI3B7C8daH8VvtQoLww', baremId: '1R4CetGF6oIAzLrgS9-Qi6euS0uU2PMmE' },
+
+  // 2022
+  { year: 2022, num: 4, stage: 'Test 4 — Sesiunea de bază',              date: 'sesiunea 2022',       testId: '1bpiz5C4HeA2xq0sYIy8a4blj0GofHw96', baremId: '1VD5MDIwGrrHfx7xraU7NQOXWblskI4So' },
+  { year: 2022, num: 5, stage: 'Test 5 — Sesiunea suplimentară',         date: 'sesiunea 2022',       testId: '1p45snPe7pG4tATZaP2PjqDU34Zq_yjgc', baremId: '1ecVbPqdVor7cZEoWTLoo61OQnjPZCRAk' },
+  { year: 2022, num: 3, stage: 'Test 3 — Pretestare',                    date: 'primăvara 2022',      testId: '1qh7QFCNyni3WCsp63AXWnxIijaUw8xZ0', baremId: '1mmeMMShJEidNQa4gOVmPN7Ugw76U0rVb' },
+  { year: 2022, num: 1, stage: 'Test 1 — Test de exersare Nr. 1',        date: 'exersare 2022',       testId: '1U_6TwXThjRXNfediq4dS4SOHQUQHM8BF', baremId: '17W1kAdjdrDax3uH1Ir7Ls-nTOdjMWenD' },
+  { year: 2022, num: 2, stage: 'Test 2 — Test de exersare Nr. 2',        date: 'exersare 2022',       testId: '1HTQZbH82DxGUUEzam-gNyzogzTGMXk4e', baremId: '1YmAVb5s1y_Vyga9zHb4ZFqik6D0dvYTA' }
+];
+
+const GAMES = [
+  {
+    id: 'bac_geo_test4_2026',
+    year: 2026,
+    stageType: 'examen',
+    stageLabel: 'Test 4 • Sesiunea de bază',
+    title: 'BAC Geografie 2026 — Sesiunea de bază',
+    desc: 'Hazarduri naturale, desfășurarea Australiei (120° E), fuse orare (Londra–Chișinău), demografia României, climogramă, traseu în America de Nord, Câmpia Amazonului și protecția solului.',
+    features: ['⏱ 180 min', '🎯 100 p.', '🌍 14 itemi'],
+    file: 'test4_2026.html'
+  },
+  {
+    id: 'bac_geo_test5_2026',
+    year: 2026,
+    stageType: 'suplimentara',
+    stageLabel: 'Test 5 • Sesiunea suplimentară',
+    title: 'BAC Geografie 2026 — Sesiunea suplimentară',
+    desc: 'Forme de relief, desfășurarea Eurasiei (30° E), fuse orare (Chișinău–Astana), demografia Marii Britanii, climogramă, traseu în America de Nord, Franța și arii protejate din R. Moldova.',
+    features: ['⏱ 180 min', '🎯 100 p.', '🌍 14 itemi'],
+    file: 'test5_2026.html'
+  },
+  {
+    id: 'bac_geo_test3_2026',
+    year: 2026,
+    stageType: 'pretestare',
+    stageLabel: 'Test 3 • Pretestare',
+    title: 'Pretestare BAC Geografie 2026',
+    desc: '01 aprilie 2026 • Lacurile Terrei, desfășurarea Americii de Sud (70° V), fuse orare (Londra–Tokio), demografia Braziliei, climogramă, traseu în America de Nord, România și Cartea Roșie.',
+    features: ['⏱ 180 min', '🎯 100 p.', '🌍 14 itemi'],
+    file: 'test3_2026.html'
+  },
+  {
+    id: 'bac_geo_test1_2026',
+    year: 2026,
+    stageType: 'exersare',
+    stageLabel: 'Test 1 • Exersare / Eșantion',
+    title: 'Test de antrenament Nr. 1 (2026)',
+    desc: '19 februarie 2026 • Coordonatele insulei Kalimantan, fluviul Mississippi, piramide ale populației (America de Nord vs. Africa), ora locală (New York–Chișinău), traseu în Africa și Africa de Nord.',
+    features: ['⏱ 180 min', '🎯 100 p.', '🔀 Variante aleatorii'],
+    file: 'test1_2026.html'
+  },
+  {
+    id: 'bac_geo_test2_2026',
+    year: 2026,
+    stageType: 'exersare',
+    stageLabel: 'Test 2 • Exersare / Eșantion',
+    title: 'Test de antrenament Nr. 2 (2026)',
+    desc: '19 februarie 2026 • Desfășurarea Braziliei (60° V), fuse orare (Washington–Los Angeles), demografia Japoniei, climogramă, poluarea urbană, gradient termic (Elbrus) și resursele Germaniei.',
+    features: ['⏱ 180 min', '🎯 100 p.', '🔀 Variante aleatorii'],
+    file: 'test2_2026.html'
+  }
+];
+
+const YEARS = [2026, 2025, 2024, 2023, 2022];
+const STORAGE_KEY = 'bac_geografie_done_v1';
+
+let activeYear = 'all';
+let searchTerm = '';
+
+function loadDoneSet() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return new Set(raw ? JSON.parse(raw) : []);
+  } catch (e) {
+    return new Set();
+  }
+}
+
+function saveDoneSet(setObj) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(setObj)));
+  } catch (e) {}
+}
+
+let doneSet = loadDoneSet();
+
+function toggleDone(id) {
+  if (doneSet.has(id)) doneSet.delete(id);
+  else doneSet.add(id);
+  saveDoneSet(doneSet);
+  updateProgress();
+  renderPortal();
+}
+
+function resetProgress() {
+  if (doneSet.size === 0) return;
+  if (!confirm('Sigur vrei să ștergi marcajele de teste digitale rezolvate?')) return;
+  doneSet.clear();
+  saveDoneSet(doneSet);
+  updateProgress();
+  renderPortal();
+}
+
+function updateProgress() {
+  const total = GAMES.length;
+  const done = GAMES.filter(g => doneSet.has(g.id)).length;
+  const pct = total ? Math.round((done / total) * 100) : 0;
+  document.getElementById('doneCount').textContent = `${done} / ${total}`;
+  document.getElementById('progressFill').style.width = `${pct}%`;
+}
+
+function normalizeText(str) {
+  return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function stageTagClass(stageType) {
+  if (stageType === 'examen') return 'tag-examen';
+  if (stageType === 'suplimentara') return 'tag-suplimentara';
+  if (stageType === 'pretestare') return 'tag-pretestare';
+  return 'tag-exersare';
+}
+
+function selectYear(yr) {
+  activeYear = yr;
+  renderYearTabs();
+  renderPortal();
+}
+
+function renderYearTabs() {
+  const el = document.getElementById('yearTabs');
+  let html = `
+    <button type="button" class="year-tab ${activeYear === 'all' ? 'active' : ''}" onclick="selectYear('all')">
+      <span class="tab-label">📚 Toți anii</span>
+      <span class="tab-sub">2022–2026 (${PDFS.length} PDF)</span>
+    </button>
+  `;
+  YEARS.forEach(yr => {
+    const cnt = PDFS.filter(p => p.year === yr).length;
+    const extra = yr === 2026 ? ' + 5 digitale' : '';
+    html += `
+      <button type="button" class="year-tab ${String(activeYear) === String(yr) ? 'active' : ''}" onclick="selectYear('${yr}')">
+        <span class="tab-label">🗓️ ${yr}</span>
+        <span class="tab-sub">${cnt} PDF${extra}</span>
+      </button>
+    `;
+  });
+  el.innerHTML = html;
+}
+
+function renderPortal() {
+  const q = normalizeText(searchTerm.trim());
+
+  // Filter PDFs by activeYear and searchTerm
+  const filteredPdfs = PDFS.filter(p => {
+    if (activeYear !== 'all' && String(p.year) !== String(activeYear)) return false;
+    if (!q) return true;
+    const hay = normalizeText(`${p.year} ${p.stage} ${p.date} pdf barem test${p.num}`);
+    return hay.includes(q);
+  });
+
+  document.getElementById('pdfCount').textContent = `${filteredPdfs.length} ${filteredPdfs.length === 1 ? 'test' : 'teste'}`;
+
+  let pdfHtml = '';
+  YEARS.forEach(yr => {
+    const grp = filteredPdfs.filter(p => p.year === yr);
+    if (!grp.length) return;
+    pdfHtml += `
+      <div class="year-divider">
+        <span>Sesiunea ${yr} (${grp.length} teste)</span>
+        <a href="${driveFolderUrl(YEAR_FOLDERS[yr])}" target="_blank" rel="noopener">Mapa ${yr} ↗</a>
+      </div>
+      ${grp.map(p => `
+        <div class="pdf-row">
+          <div class="pdf-info">
+            <div class="pdf-line1">
+              <span class="pdf-year">${p.year}</span>
+              <span class="pdf-stage">${p.stage}</span>
+              ${p.hasGame ? '<span class="mini-game-dot" title="Disponibil și ca test digital interactiv în dreapta">🎮 și digital</span>' : ''}
+            </div>
+            <span class="pdf-date">${p.date}</span>
+          </div>
+          <div class="pdf-btns">
+            <a class="btn-pdf" href="${driveFileUrl(p.testId)}" target="_blank" rel="noopener" title="Deschide testul oficial PDF">
+              📄 Test
+            </a>
+            <a class="btn-barem" href="${driveFileUrl(p.baremId)}" target="_blank" rel="noopener" title="Deschide baremul de verificare PDF">
+              ✅ Barem
+            </a>
+          </div>
+        </div>
+      `).join('')}
+    `;
+  });
+
+  if (!pdfHtml) {
+    pdfHtml = `<div style="padding:20px;color:var(--muted);font-size:13.5px;text-align:center;">Niciun fișier PDF nu corespunde filtrului curent.</div>`;
+  }
+  document.getElementById('pdfList').innerHTML = pdfHtml;
+
+  // Filter interactive games by searchTerm (always visible regardless of PDF year tab so students always have quick access)
+  const filteredGames = GAMES.filter(t => {
+    if (!q) return true;
+    const hay = normalizeText(`${t.year} ${t.stageLabel} ${t.title} ${t.desc} ${t.file} digital interactiv`);
+    return hay.includes(q);
+  });
+
+  document.getElementById('gameCount').textContent = `${filteredGames.length} ${filteredGames.length === 1 ? 'test interactiv' : 'teste interactive'}`;
+
+  const gamesHtml = filteredGames.length
+    ? filteredGames.map(t => {
+        const isDone = doneSet.has(t.id);
+        return `
+          <article class="game-card ${isDone ? 'done' : ''}">
+            <div>
+              <div class="game-top">
+                <span class="tag ${stageTagClass(t.stageType)}">${t.stageLabel}</span>
+                <span class="year-chip">${t.year}</span>
+              </div>
+              <h4 class="game-title">${t.title}</h4>
+              <p class="game-desc">${t.desc}</p>
+              <div class="game-features">
+                ${t.features.map(f => `<span class="feat-chip">${f}</span>`).join('')}
+              </div>
+            </div>
+            <div class="game-actions">
+              <a class="btn-play" href="${GITHUB_BASE + t.file}" target="_blank" rel="noopener">
+                ▶ Începe testul
+              </a>
+              <button type="button" class="btn-done" onclick="toggleDone('${t.id}')" title="Marchează testul ca rezolvat">
+                ${isDone ? '✓ Rezolvat' : 'Marchează'}
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('')
+    : `<div style="grid-column:1/-1;padding:24px;color:var(--muted);font-size:14px;text-align:center;">Niciun test digital nu corespunde căutării „${searchTerm}”.</div>`;
+
+  document.getElementById('digitalGrid').innerHTML = gamesHtml;
+}
+
+document.getElementById('searchInput').addEventListener('input', e => {
+  searchTerm = e.target.value;
+  renderPortal();
+});
+
+renderYearTabs();
+updateProgress();
+renderPortal();
+</script>
+</body>
+</html>
